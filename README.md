@@ -1,2 +1,2 @@
-# WSO2 MDM UI
-Markup of WSO2 Mobile Device Manager
+#  Vehicle Tracking UI
+Markup of Vechicle Tracking Manager
