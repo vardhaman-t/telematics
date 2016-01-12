@@ -1,0 +1,430 @@
+<!--
+* Copyright (c) 2015, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+*
+* WSO2 Inc. licenses this file to you under the Apache License,
+* Version 2.0 (the "License"); you may not use this file except
+* in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing,
+* software distributed under the License is distributed on an
+* "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+* KIND, either express or implied. See the License for the
+* specific language governing permissions and limitations
+* under the License.
+-->
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Device Manager</title>
+
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom-common.css" rel="stylesheet">    
+    <link href="css/custom-desktop.css" rel="stylesheet">
+    <link href="css/custom-theme.css" rel="stylesheet">
+
+	<!--[if lt IE 9]>
+	<script src="js/html5shiv.min.js"></script>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+</head>
+
+<body>
+
+<div class="wr-modelpopup">
+    <div class="modelpopup-content"><!-- dynamic content --></div>
+    <div class="modelpopup-bg"></div>
+</div>
+
+<div class="container col-lg-12 col-md-12 col-sm-12">
+
+    <!-- header -->
+    <header>
+        <div class="row wr-global-header">
+            <div class="col-xs-6 col-sm-6 col-lg-8 app-logo">
+                <a href="home.html"><img src="images/logo.png" /><h2 class="app-title"><span>Mobile Device Manager</span></h2></a>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-lg-4 wr-auth-container">
+                <div class="wr-auth pull-right">
+                    <a href="#" data-toggle="dropdown">
+                        <div class="auth-img">
+                            Administrator
+                            <span class="fw-stack-md fw-lg">
+                                <i class="fw fw-user fw-stack-1-5x"></i>
+                            </span>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu">
+                        <div class="cu-arrow"></div>
+                        <div class="dropdown-menu-content">
+                            <a class="filter-item">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- /header -->
+
+    <!-- secondary header - app bar -->
+    <div id="nav" class="row wr-app-bar">
+        <div class="col-md-9 wr-action-container">
+            <div class="wr-action-btn-bar">
+                <a href="javascript:openCollapsedNav()" class="cu-btn wr-hidden-nav-toggle-btn">
+                    <span class="fw-stack">
+                        <i class="fw fw-tiles fw-stack-1-5x"></i>
+                    </span>
+                </a><a class="cu-btn page-title" href='policies.html'>
+                    <span class="fw-stack"></span>
+                    Policies
+                </a><a href="dashboard.html" class="cu-btn">
+                    <span class="fw-stack">
+                        <i class="fw fw-ring fw-stack-2x"></i>
+                        <i class="fw fw-left-arrow fw-stack-1x"></i>
+                    </span>
+                    Go Back To Dashboard
+                </a><a href="policy-create-wizard.html" class="cu-btn">
+                    <span class="fw-stack">
+                        <i class="fw fw-ring fw-stack-2x"></i>
+                        <i class="fw fw-add fw-stack-1x"></i>
+                    </span>
+                    Create Policy
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- secondary header - app bar -->
+
+    <!-- common navigation -->
+    <div id="hiddenNav" class="wr-hidden-nav">
+        <ul>
+            <li><a href="#"><i class="fw fw-user"></i>User Management</a></li>
+            <li><a href="#"><i class="fw fw-settings"></i>Profile Management</a></li>
+            <li><a href="#"><i class="fw fw-policy"></i>Policy Management</a></li>
+        </ul>
+    </div>
+    <!-- /common navigation -->
+
+    <!-- content/body -->
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- content -->
+            <div class="wr-content">
+
+                <h1 class="page-sub-title">Policy Priority List</h1>
+                <h4 class="page-sub-title-desc">Drag & move to reorder list priority</h4>
+
+                <div class="wr-list-group wr-sortable policy-list">
+
+                    <span class="list-group-item" id="policy1">
+                        <div class="row no-gutter">
+                            <div class="col-lg-4 clearfix">
+                                <span class="wr-sortable-icon"><i class="fw fw-sort"></i></span>
+                                <span class="editable-text wr-sort-index">
+                                    <input type="text" id="dd" class="index">
+                                    <span class="icon fw-stack">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                    </span>
+                                </span>
+                                <span class="wr-list-icon"><i class=" fw fw-android"></i></span>
+                                <span class="wr-list-desc">
+                                    <h3 class="wr-list-name">Management Team Policy</h3>
+                                    <span class="wr-list-username">Android</span>
+                                </span>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="row no-gutter wr-desc-list-configs-grp">
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Ownership Type:</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Assigned Role(s):</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight2 col-md-4 col-sm-12">
+                                        <div><b>Compliance Type:</b> Enforce</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="list-group-item-actions">
+                                    <a href="policy-details.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-view fw-stack-1x"></i>
+                                        </span>
+                                        View
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-settings fw-stack-1x"></i>
+                                        </span>
+                                        Re-Configure
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-delete fw-stack-1x"></i>
+                                        </span>
+                                        Delete
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </span>
+
+                    <span class="list-group-item" id="policy2">
+                        <div class="row no-gutter">
+                            <div class="col-lg-4 clearfix">
+                                <span class="wr-sortable-icon"><i class="fw fw-sort"></i></span>
+                                <span class="editable-text wr-sort-index">
+                                    <input type="text" class="index">
+                                    <span class="icon fw-stack">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                    </span>
+                                </span>
+                                <span class="wr-list-icon"><i class=" fw fw-android"></i></span>
+                                <span class="wr-list-desc">
+                                    <h3 class="wr-list-name">Management Team Policy</h3>
+                                    <span class="wr-list-username">Android</span>
+                                </span>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="row no-gutter wr-desc-list-configs-grp">
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Ownership Type:</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Assigned Role(s):</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight2 col-md-4 col-sm-12">
+                                        <div><b>Compliance Type:</b> Enforce</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="list-group-item-actions">
+                                    <a href="policy-details.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-view fw-stack-1x"></i>
+                                        </span>
+                                        View
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-settings fw-stack-1x"></i>
+                                        </span>
+                                        Re-Configure
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-delete fw-stack-1x"></i>
+                                        </span>
+                                        Delete
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </span>
+
+                    <span class="list-group-item" id="policy3">
+                        <div class="row no-gutter">
+                            <div class="col-lg-4 clearfix">
+                                <span class="wr-sortable-icon"><i class="fw fw-sort"></i></span>
+                                <span class="editable-text wr-sort-index">
+                                    <input type="text" class="index">
+                                    <span class="icon fw-stack">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                    </span>
+                                </span>
+                                <span class="wr-list-icon"><i class=" fw fw-windows"></i></span>
+                                <span class="wr-list-desc">
+                                    <h3 class="wr-list-name">Management Team Policy</h3>
+                                    <span class="wr-list-username">Windows</span>
+                                </span>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="row no-gutter wr-desc-list-configs-grp">
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Ownership Type:</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Assigned Role(s):</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight2 col-md-4 col-sm-12">
+                                        <div><b>Compliance Type:</b> Enforce</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="list-group-item-actions">
+                                    <a href="policy-details.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-view fw-stack-1x"></i>
+                                        </span>
+                                        View
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-settings fw-stack-1x"></i>
+                                        </span>
+                                        Re-Configure
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-delete fw-stack-1x"></i>
+                                        </span>
+                                        Delete
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </span>
+
+                    <span class="list-group-item" id="policy4">
+                        <div class="row no-gutter">
+                            <div class="col-lg-4 clearfix">
+                                <span class="wr-sortable-icon"><i class="fw fw-sort"></i></span>
+                                <span class="editable-text wr-sort-index">
+                                    <input type="text" class="index">
+                                    <span class="icon fw-stack">
+                                        <i class="fw fw-ring fw-stack-2x"></i>
+                                        <i class="fw fw-edit fw-stack-1x"></i>
+                                    </span>
+                                </span>
+                                <span class="wr-list-icon"><i class=" fw fw-apple"></i></span>
+                                <span class="wr-list-desc">
+                                    <h3 class="wr-list-name">Management Team Policy</h3>
+                                    <span class="wr-list-username">Apple</span>
+                                </span>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="row no-gutter wr-desc-list-configs-grp">
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Ownership Type:</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight col-md-4 col-sm-12">
+                                        <div><b>Assigned Role(s):</b> ANY</div>
+                                    </div>
+                                    <div class="wr-desc-list-configs highlight2 col-md-4 col-sm-12">
+                                        <div><b>Compliance Type:</b> Enforce</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3">
+                                <span class="list-group-item-actions">
+                                    <a href="policy-details.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-view fw-stack-1x"></i>
+                                        </span>
+                                        View
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-settings fw-stack-1x"></i>
+                                        </span>
+                                        Re-Configure
+                                    </a>
+                                    <a href="policy-create.html" class="cu-btn-inner">
+                                        <span class="fw-stack">
+                                            <i class="fw fw-ring fw-stack-2x"></i>
+                                            <i class="fw fw-delete fw-stack-1x"></i>
+                                        </span>
+                                        Delete
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </span>
+
+                </div>
+
+                <div class="wr-input-control wr-btn-grp">
+                    <button class="wr-btn" id="sortUpdateBtn" disabled>Update</button>
+                </div>
+
+            </div>
+            <!-- /content -->
+
+        </div>
+    </div>
+    <!-- /content/body -->
+
+    <!-- footer -->
+    <footer class="footer">
+        <p>Mobile Device Manager v.2.0.0 | &copy; <script>document.write(new Date().getFullYear());</script> <a href="http://wso2.com/" target="_blank"><i class="fw fw-wso2"></i> Inc</a>. All Rights Reserved.</p>
+    </footer>
+    <!-- /footer -->
+
+</div>
+
+<div id="content-filter-types" style="display: none">
+    <div class="sort-title">Sort By</div>
+    <div class="sort-options">
+    	<a href="#">Device Name<span class="ico-sort-asc"></span></a>
+    	<a href="#">OS</a>
+    	<a href="#">User</a>
+    	<a href="#">Model</a>   
+    </div>
+</div>
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/sortable-list.js"></script>
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+    $('[data-toggle="tooltip"]').tooltip();   
+
+    $("[data-toggle=popover]").popover();
+
+    $(".ctrl-filter-type-switcher").popover({
+        html : true, 
+        content: function() {
+          return $('#content-filter-types').html();
+        }
+    });    
+
+	$('#nav').affix({
+	      offset: {
+	        top: $('header').height()
+	      }
+	});
+
+});
+
+function openCollapsedNav(){
+    $('.wr-hidden-nav-toggle-btn').addClass('active');
+    $('#hiddenNav').slideToggle('slideDown', function(){
+        if($(this).css('display') == 'none'){
+            $('.wr-hidden-nav-toggle-btn').removeClass('active');
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>
